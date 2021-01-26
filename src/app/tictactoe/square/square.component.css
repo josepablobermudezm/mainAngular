@@ -1,0 +1,29 @@
+button {
+  width: 100%;
+  height: 100%;
+  font-size: 5em !important;
+}
+
+.NormalButton {
+  border: 1px #25a9ef;
+  background: #25a9ef;
+  cursor: pointer;
+}
+
+.NormalButton:hover {
+  border: 1px #0082c9;
+  background: #0082c9;
+  cursor: pointer;
+}
+
+.xButton {
+  border: 1px #19c797;
+  background: #19c797;
+  cursor: pointer;
+}
+
+.oButton {
+  border: 1px #8150fa;
+  background: #8150fa;
+  cursor: pointer;
+}

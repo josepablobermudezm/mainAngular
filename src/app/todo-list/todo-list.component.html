@@ -1,0 +1,32 @@
+<div class="app">
+  <header>
+    <h1 class="textA">Lista de Quehaceres</h1>
+  </header>
+
+  <div class="todos">
+    <form (submit)="addTodo()">
+      <input
+        type="text"
+        name="inputTodo"
+        placeholder="Introduzca un quehacer..."
+        class="todo-input"
+        [(ngModel)]="inputTodo"
+      />
+      <input type="submit" value="Agregar" class="todo-submit" />
+    </form>
+    <div
+      *ngFor="let todo of todos; let i = index"
+      class="todo {{ todo.completed ? 'done' : '' }}"
+    >
+      <div class="id">{{ i + 1 }}</div>
+      <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+      <a class="delete" (click)="deleteTodo(i)">X</a>
+      <a class="averageButton" (click)="editTodo(i)">Editar</a>
+    </div>
+    <div class="divButton">
+        <a class="averageButton" (click)="completar_Incompletar()">{{completado?"Incompletar":"Completar"}} todos</a>
+        <a class="averageButton" (click)="eliminarCompletos()">Eliminar Completados</a>
+    </div>
+    
+  </div>
+</div>

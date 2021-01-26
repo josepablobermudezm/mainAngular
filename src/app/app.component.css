@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+ng-sidebar-container{
+    height: 100vh;
+}
+
+::ng-deep .ng-sidebar{
+    background-color: #f4f4f4;
+    width: 200px;
+    padding: 2em 3em;
+    background-color: #183594;
+}
+
+.menu {
+    margin-top: 2em;
+    display: block;
+}
+
+.menu li {
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    list-style:none;
+}
+
+li:hover{
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    background-color: #2f80ed;
+}
+
+.menu li a {
+    display: block;
+    width: 100%;
+    color: white;
+    text-decoration:none;
+}
+
+.textHome{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}

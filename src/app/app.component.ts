@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mainProject';
+  opened = false;
+  barsIcon = faBars;
+
+  toggleSidebar(){//abrir el sidebar
+    this.opened = !this.opened;
+  }
+
 }
