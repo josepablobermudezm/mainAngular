@@ -1,13 +1,13 @@
 main {
   display: grid;
   justify-content: center;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: 20% 20% 20%;
   grid-gap: 0px;
 }
 
 app-square {
   border: 1px gray solid;
-  height: 170px;
+  height: 120px;
 }
 
 .coolButton {
