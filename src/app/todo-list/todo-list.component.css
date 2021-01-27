@@ -93,29 +93,6 @@
   text-align: center;
 }
 
-.averageButton {
-  margin: 10px;
-  display: inline-block;
-  max-width: 200px;
-  appearance: none;
-  border: none;
-  outline: none;
-  background: none;
-
-  background-color: #0f6fec;
-  color: #fff;
-
-  padding: 10px 15px;
-  font-size: 18px;
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.averageButton:hover {
-  background-color: #1662c7;
-}
-
 .textA {
   text-align: center;
   color: white;

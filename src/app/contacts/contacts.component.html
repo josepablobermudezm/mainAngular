@@ -1,1 +1,42 @@
-<p>contacts works!</p>
+<div class="div">
+  <form [formGroup]="myForm">
+    <h2 class="textHome" style="color: #104a96; font-size: 25px;">Formulario</h2>
+    
+    <div class="form__group field">
+      <input
+        formControlName="email"
+        placeholder="correo"
+        type="text"
+        class="form__field"
+      />
+      <label for="name" class="form__label">Name</label>
+      <mat-error *ngIf="email.invalid && email.touched"
+        >Tu correo tiene errores</mat-error
+      >
+    </div>
+
+    <div class="form__group field">
+      <textarea
+        formControlName="message"
+        placeholder="mensaje..."
+        type="text"
+        rows="10"
+        cols="50"
+        class="form__field"
+      >
+      </textarea>
+      <label for="name" class="form__label">Mensaje</label>
+      <mat-error *ngIf="message.invalid && message.touched">
+        Tienes que escribir algo
+      </mat-error>
+    </div>
+
+    <div class="divButton">
+      <button class="averageButton" [disabled]="myForm.invalid">Enviar</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="success">
+    Yay! Hemos recibido tu información
+</div>

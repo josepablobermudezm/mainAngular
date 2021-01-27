@@ -29,6 +29,7 @@ ng-sidebar-container{
     font-size: 20px;
     width: 100%;
     list-style:none;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 li:hover{
@@ -36,6 +37,7 @@ li:hover{
     color: white;
     text-align: center;
     background-color: #2f80ed;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 .menu li a {
@@ -43,10 +45,5 @@ li:hover{
     width: 100%;
     color: white;
     text-decoration:none;
-}
-
-.textHome{
-    text-align: center;
-    color: white;
-    font-size: 50px;
+    overflow: hidden; /* Hide scrollbars */
 }

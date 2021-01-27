@@ -2,11 +2,11 @@
   <!--Sidebar-->
   <ng-sidebar [opened]="opened">
     <a class="textHome" style="font-size: 30px; cursor:pointer" (click)="toggleSidebar()">X</a>
-    <p class="textHome">MENU</p>
     <ul class="menu">
       <li><a routerLink="/" (click)="toggleSidebar()" >Dashboard</a></li>
       <li><a routerLink="/todo-list" (click)="toggleSidebar()" >Todo-List</a></li>
       <li><a routerLink="/board" (click)="toggleSidebar()" >TicTacToe</a></li>
+      <li><a routerLink="/contact" (click)="toggleSidebar()" >Contacto</a></li>
     </ul>
   </ng-sidebar>
   <div ng-sidebar-content>
