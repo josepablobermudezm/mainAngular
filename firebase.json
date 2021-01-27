@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "primerapp-bccf8",
-    "public": "y",
+    "public": "dist/mainProject",
     "ignore": [
       "firebase.json",
       "**/.*",

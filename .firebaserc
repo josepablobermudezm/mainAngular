@@ -1,14 +1,5 @@
 {
-  "targets": {
-    "primerapp-bccf8": {
-      "hosting": {
-        "mainProject": [
-          "primerapp-bccf8"
-        ]
-      }
-    }
-  },
   "projects": {
-    "default": "primerapp-bccf8"
+    "default": "primerapplication"
   }
 }
