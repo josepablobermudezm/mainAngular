@@ -1,24 +1,14 @@
-<h1 class="text" >Current Player: {{ player }} </h1>
+<h1 class="text" *ngIf="!ganador && !empate">Turno de: {{ player }}</h1>
+<h1 class="text" *ngIf="ganador">{{ ganador }} ha ganado el juego!</h1>
+<h1 class="text" *ngIf="empate">¡Empate!</h1>
 
 <button class="coolButton" (click)="newGame()">Comenzar Juego</button>
 
-
-<h2 class="text" *ngIf="ganador">
-    {{ ganador }} ha ganado el juego!
-</h2>
-
-<h2 class="text" *ngIf="empate">
-    ¡Empate!
-</h2>
-
-
 <main>
-    <app-square 
-        *ngFor="let val of squares; let i = index" 
-        [value]="val"
-        (click)="makeMove(i)"> 
-    </app-square>
+  <app-square
+    *ngFor="let val of squares; let i = index"
+    [value]="val"
+    (click)="makeMove(i)"
+  >
+  </app-square>
 </main>
-
-
-

@@ -57,24 +57,26 @@ export class TodoListComponent implements OnInit {
   }
 
   addTodo() {
-    if (!this.edit) {
-      //agregamos normalmente
-      this.todos.push({
-        content: this.inputTodo,
-        completed: false,
-      });
-    } else {
-      //editamos
-      this.todos.map((v, i) => {
-        if (i == this.ID) {
-          v.content = this.inputTodo;
-          this.ID = -1;
-          this.edit = false;
-        }
-        return v;
-      });
+    if (this.inputTodo) {//si no está vacío
+      if (!this.edit) {
+        //agregamos normalmente
+        this.todos.push({
+          content: this.inputTodo,
+          completed: false,
+        });
+      } else {
+        //editamos
+        this.todos.map((v, i) => {
+          if (i == this.ID) {
+            v.content = this.inputTodo;
+            this.ID = -1;
+            this.edit = false;
+          }
+          return v;
+        });
+      }
+      this.inputTodo = ''; //limpiamos input
     }
-    this.inputTodo = '';//limpiamos input
   }
 
   completar_Incompletar() {

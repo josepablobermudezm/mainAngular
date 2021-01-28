@@ -50,7 +50,7 @@ export class BoardComponent implements OnInit {
   }
 
   calcularGanador() {
-    const lines = [
+    const lines = [//tiene todas las combinaciones posibles para ganar
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -60,13 +60,15 @@ export class BoardComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    for (let i = 0; i < lines.length; i++) {
+    for (let i = 0; i < lines.length; i++) {//recorre todas esas combinaciones y agrega los indices de los cuadros del board como constantes a b c 
       const [a, b, c] = lines[i];
       if (
         this.squares[a] &&
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
+        /*finalmente, el if va a comparar la combinación actual de la iteración CON el los cuadros clickeados en el board
+        si encuentra alguna combinación que calce, retorna esa combinación, sino retorna null. */
         return this.squares[a];
       }
     }
