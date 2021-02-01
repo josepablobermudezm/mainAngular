@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AngularFirestore } from '@angular/fire/firestore';
-import { tap, first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contacts',
@@ -16,7 +15,7 @@ export class ContactsComponent implements OnInit {
   loading = false;
   success = false;
 
-  constructor(private fb: FormBuilder/*, private afs: AngularFirestore*/) {}
+  constructor(private fb: FormBuilder, private afs: AngularFirestore) {}
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -32,6 +31,19 @@ export class ContactsComponent implements OnInit {
 
   get message() {
     return this.myForm.get('message');
+  }
+
+   submitHandler() {
+    this.loading = true;
+
+    const formValue = this.myForm.value;
+      console.log(formValue);
+      this.afs.collection('primeraapp-38578-default-rtdb').add(formValue);
+      this.success = true;
+      console.log(formValue);
+      console.log(this.success);
+
+    this.loading = false;
   }
 
   /*async submitHandler() {

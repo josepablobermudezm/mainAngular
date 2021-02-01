@@ -1,5 +1,5 @@
 <div class="div">
-  <form [formGroup]="myForm">
+  <form [formGroup]="myForm" [hidden]="success" (ngSubmit)="submitHandler()">
     <h2 class="textHome" style="color: #104a96; font-size: 25px;">Formulario</h2>
     
     <div class="form__group field">

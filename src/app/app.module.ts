@@ -24,6 +24,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAFXHo19dNrMMxyfmKBG4oGB37o5ddSDMs",
+  authDomain: "primeraapp-38578.firebaseapp.com",
+  databaseURL: "https://primeraapp-38578-default-rtdb.firebaseio.com/",
+  projectId: "primeraapp-38578",
+  storageBucket: "primeraapp-38578.appspot.com",
+  messagingSenderId: "578950898605",
+  appId: "1:578950898605:web:e1938e05b08c42d9f97724"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +62,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
-    CommonModule
+    CommonModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
