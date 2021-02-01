@@ -6,6 +6,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BoardComponent } from './tictactoe/board/board.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
+import {LaunchListComponent} from './launch-list/launch-list.component';
+import {LaunchDetailsComponent} from './launch-details/launch-details.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +27,14 @@ const routes: Routes = [
   {
     path: "board",
     component: BoardComponent
+  },
+  {
+    path: 'spacex',
+    component: LaunchListComponent
+  },
+  {
+    path: ':id',
+    component: LaunchDetailsComponent
   }
 ];
 

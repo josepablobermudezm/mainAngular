@@ -1,0 +1,13 @@
+#en dónde obtener la información de scheme
+schema:
+  - https://api.spacex.land/graphql/
+#del lado del cliente, convierte los queries en servicios
+documents:
+  - src/**/*.graphql
+  #en dónde van a salir los servicios y la lista de plugins
+generates:
+  ./src/app/services/spacexGraphql.service.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-apollo-angular

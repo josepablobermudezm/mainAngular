@@ -26,6 +26,12 @@ import { MatChipsModule } from '@angular/material/chips';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { LaunchListComponent } from './launch-list/launch-list.component';
+import { LaunchDetailsComponent } from './launch-details/launch-details.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import { MatCardModule } from '@angular/material/card';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAFXHo19dNrMMxyfmKBG4oGB37o5ddSDMs",
@@ -45,6 +51,8 @@ const firebaseConfig = {
     TodoListComponent,
     SquareComponent,
     BoardComponent,
+    LaunchListComponent,
+    LaunchDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +72,10 @@ const firebaseConfig = {
     MatChipsModule,
     CommonModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    GraphQLModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
