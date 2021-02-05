@@ -5,18 +5,18 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BoardComponent } from './tictactoe/board/board.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-
 import { AlyleUIComponent } from './alyle-ui/alyle-ui.component';
-
 import {LaunchListComponent} from './launch-list/launch-list.component';
 import {LaunchDetailsComponent} from './launch-details/launch-details.component';
-
+import { WannaflexComponent } from './wannaflex/wannaflex.component';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: DashboardComponent,
   },
+  
   {
     path: "todo-list",
     component: TodoListComponent
@@ -39,9 +39,14 @@ const routes: Routes = [
     component: LaunchListComponent
   },
   {
+    path: 'wannaflex',
+    component: WannaflexComponent
+  },
+  {
     path: ':id',
     component: LaunchDetailsComponent
-  }
+  },
+  
 ];
 
 @NgModule({

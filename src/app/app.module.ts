@@ -56,15 +56,17 @@ import { LyImageCropperModule } from '@alyle/ui/image-cropper';
 import { LyBadgeModule } from '@alyle/ui/badge';
 import { LyIconModule } from '@alyle/ui/icon';
 import { LyAvatarModule } from '@alyle/ui/avatar';
-import { LyGridModule } from '@alyle/ui/grid';
 import { LyMenuModule } from '@alyle/ui/menu';
 import { LySliderModule } from '@alyle/ui/slider';
+import { LyGridModule } from '@alyle/ui/grid';
 
 
 /** Import themes */
 import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
 import { AlyleUIComponent } from './alyle-ui/alyle-ui.component';
-import { FlexingComponent } from './flexing/flexing.component';
+import { WannaflexComponent } from './wannaflex/wannaflex.component';
+import { LyCommonModule } from '@alyle/ui';
+import { LyTypographyModule } from '@alyle/ui/typography';
 
 
 const firebaseConfig = {
@@ -88,7 +90,7 @@ const firebaseConfig = {
     LaunchListComponent,
     LaunchDetailsComponent,
     AlyleUIComponent,
-    FlexingComponent,
+    WannaflexComponent
   ],
   imports: [
     BrowserModule,
@@ -122,6 +124,8 @@ const firebaseConfig = {
     LyIconModule,
     LyBadgeModule,
     LySliderModule,
+    LyCommonModule,
+    LyTypographyModule,
     // ...
     // Gestures
     HammerModule

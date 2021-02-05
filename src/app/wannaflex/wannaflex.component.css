@@ -1,0 +1,11 @@
+.div1 {
+  display: flex;
+}
+
+.div2 {
+  flex-direction: column;
+}
+
+.div3 {
+    flex-grow: 4;
+}

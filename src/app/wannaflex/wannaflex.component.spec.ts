@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlexingComponent } from './flexing.component';
+import { WannaflexComponent } from './wannaflex.component';
 
-describe('FlexingComponent', () => {
-  let component: FlexingComponent;
-  let fixture: ComponentFixture<FlexingComponent>;
+describe('WannaflexComponent', () => {
+  let component: WannaflexComponent;
+  let fixture: ComponentFixture<WannaflexComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FlexingComponent ]
+      declarations: [ WannaflexComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FlexingComponent);
+    fixture = TestBed.createComponent(WannaflexComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
