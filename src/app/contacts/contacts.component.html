@@ -1,7 +1,7 @@
 <div class="div">
   <form [formGroup]="myForm" [hidden]="success" (ngSubmit)="submitHandler()">
-    <h2 class="textHome" style="color: #104a96; font-size: 25px;">Formulario</h2>
-    
+    <h2 class="textHome" style="color: #104a96; font-size: 25px">Formulario</h2>
+
     <div class="form__group field">
       <input
         formControlName="email"
@@ -35,8 +35,5 @@
       <button class="averageButton" [disabled]="myForm.invalid">Enviar</button>
     </div>
   </form>
-</div>
-
-<div *ngIf="success">
-    Yay! Hemos recibido tu información
+  <div *ngIf="success">Yay! Hemos recibido tu información</div>
 </div>

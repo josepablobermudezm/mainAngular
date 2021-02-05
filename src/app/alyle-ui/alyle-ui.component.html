@@ -1,0 +1,119 @@
+<div class="div">
+  <p class="textHome">¡AlyleUI!</p>
+  <!--<img src="assets/photo.svg" alt="" class="center" />-->
+  <div class="center">
+    <!--tipos de botones-->
+    <button ly-button raised>Default</button>
+    <button ly-button raised bg="primary">Primary</button>
+    <button ly-button raised bg="secondary" style="color: white">Secondary</button>
+    <button ly-button raised bg="accent" style="color: white">Accent</button>
+    <button ly-button raised bg="warn" style="color: white">Warn</button>
+    <button ly-button outlined style="color:white">Outlined</button>
+
+
+    <!--Campana con notificaciones-->
+    <button ly-button appearance="icon" style="color: white">
+      <ly-icon #icon>notifications</ly-icon>
+    </button>
+    <ly-badge
+      [withClass]="classes.badge1"
+      bg="primary"
+      [container]="icon"
+      style="color: white"
+      >9+</ly-badge
+    >
+
+    <ly-grid container justify="evenly">
+      <button ly-button appearance="icon" [lyMenuTriggerFor]="menu">
+        <ly-avatar [lySize]="32">
+          <ly-icon>favorite</ly-icon>
+        </ly-avatar>
+      </button>
+    </ly-grid>
+
+    <ly-grid container justify="evenly">
+      <button ly-button appearance="icon" [lyMenuTriggerFor]="menu">
+        <ly-avatar [lySize]="32">
+          <img
+            alt="Larm Rmah"
+            src="https://firebasestorage.googleapis.com/v0/b/alyle-ui.appspot.com/o/img%2Flarm-rmah-47685-unsplash.jpeg?alt=media&token=1db05ae5-9c03-437b-9e8c-764dfb257061"
+          />
+        </ly-avatar>
+      </button>
+    </ly-grid>
+
+    <ly-grid container justify="evenly">
+      <button ly-button appearance="icon" [lyMenuTriggerFor]="menu">
+        <ly-avatar [lySize]="32">
+          <ly-avatar bg="primary" [elevation]="3">A</ly-avatar>
+        </ly-avatar>
+      </button>
+    </ly-grid>
+
+    <ng-template #menu let-M>
+      <ly-menu [ref]="M">
+        <button
+          ly-button
+          ly-menu-item
+          *ngFor="let item of [null, null, null]; index as i"
+        >
+          <span>Item {{ i + 1 }}</span>
+        </button>
+      </ly-menu>
+    </ng-template>
+
+    <div [lyDisplay]="'flex'">
+      <button ly-button color="primary" (click)="_fileInput.click()">
+        <ly-icon>image</ly-icon>
+        <span>Select File</span>
+      </button>
+      <span [lyFlex]="1"></span>
+      <!-- Hidden input -->
+      <input #_fileInput type="file" (change)="cropper.selectInputEvent($event)" accept="image/*" hidden>
+      <button raised ly-button bg="accent" *ngIf="croppedImage">Upload</button>
+    </div>
+    
+    <div *ngIf="ready">
+      <button (click)="cropper.zoomIn()" ly-button appearance="icon" style="color: white" ><ly-icon>zoom_in</ly-icon></button>
+      <button (click)="cropper.zoomOut()" ly-button appearance="icon" style="color: white" ><ly-icon>zoom_out</ly-icon></button>
+      <button (click)="cropper.center()" ly-button appearance="icon" style="color: white" ><ly-icon>filter_center_focus</ly-icon></button>
+      <button (click)="cropper.rotate(-90)" ly-button appearance="icon" style="color: white" ><ly-icon>rotate_90_degrees_ccw</ly-icon></button>
+      <button (click)="cropper.fit()" ly-button style="color: white" >Fit</button>
+      <button (click)="cropper.fitToScreen()" ly-button style="color: white" >Fit to screen</button>
+      <button (click)="cropper.setScale(1)" ly-button style="color: white"s >1:1</button>
+      <button (click)="cropper.clean()" ly-button style="color: white"s >Clean</button>
+    </div>
+    
+    <ly-img-cropper [withClass]="classes.cropper"
+      [config]="myConfig"
+      [(scale)]="scale"
+      (minScale)="minScale = $event"
+      (ready)="ready = true"
+      (cleaned)="ready = false"
+      (cropped)="onCropped($event)"
+      (loaded)="onLoaded($event)"
+      (error)="onError($event)"
+    >
+      <span>Drag and drop image</span>
+    </ly-img-cropper>
+    
+    <div *ngIf="ready" [className]="classes.sliderContainer">
+      <ly-slider
+        [thumbVisible]="false"
+        [min]="minScale"
+        [max]="1"
+        [(ngModel)]="scale"
+        (input)="scale = $event.value"
+        ></ly-slider>
+    </div>
+    
+    <button *ngIf="ready" color="accent" (click)="cropper.crop()" ly-button>
+      <ly-icon>crop</ly-icon>crop
+    </button>
+    
+    <div>
+      <img *ngIf="croppedImage" [src]="croppedImage">
+    </div>
+    
+  </div>
+</div>

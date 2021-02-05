@@ -33,6 +33,40 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 
+
+
+// Gestures
+import {
+  HAMMER_GESTURE_CONFIG,
+  HammerModule
+} from '@angular/platform-browser';
+
+/** Import Alyle UI */
+import {
+  LyTheme2,
+  StyleRenderer,
+  LY_THEME,
+  LY_THEME_NAME,
+  LyHammerGestureConfig
+} from '@alyle/ui';
+
+import { LyButtonModule } from '@alyle/ui/button';
+import { LyToolbarModule } from '@alyle/ui/toolbar';
+import { LyImageCropperModule } from '@alyle/ui/image-cropper';
+import { LyBadgeModule } from '@alyle/ui/badge';
+import { LyIconModule } from '@alyle/ui/icon';
+import { LyAvatarModule } from '@alyle/ui/avatar';
+import { LyGridModule } from '@alyle/ui/grid';
+import { LyMenuModule } from '@alyle/ui/menu';
+import { LySliderModule } from '@alyle/ui/slider';
+
+
+/** Import themes */
+import { MinimaLight, MinimaDark } from '@alyle/ui/themes/minima';
+import { AlyleUIComponent } from './alyle-ui/alyle-ui.component';
+import { FlexingComponent } from './flexing/flexing.component';
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAFXHo19dNrMMxyfmKBG4oGB37o5ddSDMs",
   authDomain: "primeraapp-38578.firebaseapp.com",
@@ -53,6 +87,8 @@ const firebaseConfig = {
     BoardComponent,
     LaunchListComponent,
     LaunchDetailsComponent,
+    AlyleUIComponent,
+    FlexingComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,9 +111,31 @@ const firebaseConfig = {
     AngularFirestoreModule,
     GraphQLModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    // Add components
+    LyButtonModule,
+    LyToolbarModule,
+    LyImageCropperModule,
+    LyAvatarModule,
+    LyGridModule,
+    LyMenuModule,
+    LyIconModule,
+    LyBadgeModule,
+    LySliderModule,
+    // ...
+    // Gestures
+    HammerModule
   ],
-  providers: [],
+  providers: [
+    [ LyTheme2 ],
+    [ StyleRenderer ],
+    // Theme that will be applied to this module
+    { provide: LY_THEME_NAME, useValue: 'minima-light' },
+    { provide: LY_THEME, useClass: MinimaLight, multi: true }, // name: `minima-light`
+    { provide: LY_THEME, useClass: MinimaDark, multi: true }, // name: `minima-dark`
+    // Gestures
+    { provide: HAMMER_GESTURE_CONFIG, useClass: LyHammerGestureConfig }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

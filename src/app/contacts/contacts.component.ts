@@ -33,16 +33,12 @@ export class ContactsComponent implements OnInit {
     return this.myForm.get('message');
   }
 
-   submitHandler() {
+  submitHandler() {
     this.loading = true;
 
     const formValue = this.myForm.value;
-      console.log(formValue);
-      this.afs.collection('primeraapp-38578-default-rtdb').add(formValue);
-      this.success = true;
-      console.log(formValue);
-      console.log(this.success);
-
+    this.afs.collection('textCollection').add(formValue);
+    this.success = true;
     this.loading = false;
   }
 

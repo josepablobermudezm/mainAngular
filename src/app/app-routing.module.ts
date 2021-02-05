@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BoardComponent } from './tictactoe/board/board.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
+import { AlyleUIComponent } from './alyle-ui/alyle-ui.component';
+
 import {LaunchListComponent} from './launch-list/launch-list.component';
 import {LaunchDetailsComponent} from './launch-details/launch-details.component';
 
@@ -27,6 +29,10 @@ const routes: Routes = [
   {
     path: "board",
     component: BoardComponent
+  },
+  {
+    path: "alyleUI",
+    component: AlyleUIComponent
   },
   {
     path: 'spacex',
